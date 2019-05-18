@@ -1,2 +1,0 @@
-Info (10281): Verilog HDL Declaration information at DTOUCH.v(8): object "Count1" differs only in case from object "count1" in the same scope File: C:/intelFPGA_lite/DTOUCH/DTOUCH.v Line: 8
-Info (10281): Verilog HDL Declaration information at DTOUCH.v(11): object "Count2" differs only in case from object "count2" in the same scope File: C:/intelFPGA_lite/DTOUCH/DTOUCH.v Line: 11

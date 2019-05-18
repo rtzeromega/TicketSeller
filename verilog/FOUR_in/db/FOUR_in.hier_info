@@ -1,8 +1,0 @@
-|FOUR_in
-led <= led.DB_MAX_OUTPUT_PORT_TYPE
-a => tmp1.IN0
-b => tmp1.IN1
-c => tmp2.IN0
-d => tmp2.IN1
-
-
