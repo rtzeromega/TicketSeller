@@ -1,0 +1,11 @@
+Fitter Status : Successful - Tue Jan 01 23:04:25 2019
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : 01
+Top-level Entity Name : metro
+Family : MAX II
+Device : EPM1270T144C3
+Timing Models : Final
+Total logic elements : 1,244 / 1,270 ( 98 % )
+Total pins : 51 / 116 ( 44 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

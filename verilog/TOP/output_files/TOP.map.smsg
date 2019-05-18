@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at TOP.v(7): object "Count1" differs only in case from object "count1" in the same scope File: C:/intelFPGA_lite/TOP/TOP.v Line: 7
+Info (10281): Verilog HDL Declaration information at TOP.v(10): object "Count2" differs only in case from object "count2" in the same scope File: C:/intelFPGA_lite/TOP/TOP.v Line: 10

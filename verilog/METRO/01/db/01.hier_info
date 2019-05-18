@@ -1,0 +1,218 @@
+|metro
+clk => clk.IN8
+sw => zero.OUTPUTSELECT
+sw => pay1[3].OUTPUTSELECT
+sw => pay1[2].OUTPUTSELECT
+sw => pay1[1].OUTPUTSELECT
+sw => pay1[0].OUTPUTSELECT
+sw => pay10[3].OUTPUTSELECT
+sw => pay10[2].OUTPUTSELECT
+sw => pay10[1].OUTPUTSELECT
+sw => pay10[0].OUTPUTSELECT
+sw => pay100[3].OUTPUTSELECT
+sw => pay100[2].OUTPUTSELECT
+sw => pay100[1].OUTPUTSELECT
+sw => pay100[0].OUTPUTSELECT
+sw => change[0].IN1
+sw => std.111.IN1
+sw => gcol[0]$latch.LATCH_ENABLE
+sw => gcol[1]$latch.LATCH_ENABLE
+sw => gcol[2]$latch.LATCH_ENABLE
+sw => gcol[3]$latch.LATCH_ENABLE
+sw => gcol[4]$latch.LATCH_ENABLE
+sw => gcol[5]$latch.LATCH_ENABLE
+sw => gcol[6]$latch.LATCH_ENABLE
+sw => gcol[7]$latch.LATCH_ENABLE
+sw => rcol[0]$latch.LATCH_ENABLE
+sw => rcol[1]$latch.LATCH_ENABLE
+sw => rcol[2]$latch.LATCH_ENABLE
+sw => rcol[3]$latch.LATCH_ENABLE
+sw => rcol[4]$latch.LATCH_ENABLE
+sw => rcol[5]$latch.LATCH_ENABLE
+sw => rcol[6]$latch.LATCH_ENABLE
+sw => rcol[7]$latch.LATCH_ENABLE
+sw => data[0].LATCH_ENABLE
+sw => data[1].LATCH_ENABLE
+sw => data[2].LATCH_ENABLE
+sw => data[3].LATCH_ENABLE
+sw => ds.OUTPUTSELECT
+sw => ds.OUTPUTSELECT
+sw => ds.OUTPUTSELECT
+sw => ds.OUTPUTSELECT
+sw => ds.OUTPUTSELECT
+sw => ds.OUTPUTSELECT
+sw => ds.OUTPUTSELECT
+sw => ds.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => row.OUTPUTSELECT
+sw => test[0].PRESET
+sw => test[1].PRESET
+rst => zero.OUTPUTSELECT
+btn[0] => btn[0].IN1
+btn[1] => btn[1].IN1
+btn[2] => btn[2].IN1
+btn[3] => btn[3].IN1
+btn[4] => btn[4].IN1
+btn[5] => btn[5].IN1
+btn[6] => btn[6].IN1
+btn[7] => btn[7].IN1
+ds[0] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+ds[1] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+ds[2] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+ds[3] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+ds[4] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+ds[5] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+ds[6] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+ds[7] <= ds.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= seg[0].DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= seg[1].DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg[2].DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= seg[3].DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg[4].DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg[5].DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg[6].DB_MAX_OUTPUT_PORT_TYPE
+seg[7] <= seg[7].DB_MAX_OUTPUT_PORT_TYPE
+row[0] <= row.DB_MAX_OUTPUT_PORT_TYPE
+row[1] <= row.DB_MAX_OUTPUT_PORT_TYPE
+row[2] <= row.DB_MAX_OUTPUT_PORT_TYPE
+row[3] <= row.DB_MAX_OUTPUT_PORT_TYPE
+row[4] <= row.DB_MAX_OUTPUT_PORT_TYPE
+row[5] <= row.DB_MAX_OUTPUT_PORT_TYPE
+row[6] <= row.DB_MAX_OUTPUT_PORT_TYPE
+row[7] <= row.DB_MAX_OUTPUT_PORT_TYPE
+rcol[0] <= rcol[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rcol[1] <= rcol[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rcol[2] <= rcol[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rcol[3] <= rcol[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rcol[4] <= rcol[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rcol[5] <= rcol[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rcol[6] <= rcol[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rcol[7] <= rcol[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[0] <= gcol[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[1] <= gcol[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[2] <= gcol[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[3] <= gcol[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[4] <= gcol[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[5] <= gcol[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[6] <= gcol[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gcol[7] <= gcol[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u1
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u2
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u3
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u4
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u5
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u6
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u7
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|metro|debounce:u8
+clk => key_sec_pre[0].CLK
+clk => key_sec[0].CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => key_rst_pre[0].CLK
+clk => key_rst[0].CLK
+key[0] => key_rst[0].DATAIN
+key[0] => key_sec[0].DATAIN
+key_pulse[0] <= key_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+

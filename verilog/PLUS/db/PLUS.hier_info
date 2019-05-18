@@ -1,0 +1,60 @@
+|PLUS
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => _.IN1
+b[1] => _.IN1
+b[2] => _.IN1
+b[3] => _.IN1
+led[0] <= PLUS1:u1.sum
+led[1] <= PLUS1:u2.sum
+led[2] <= PLUS1:u3.sum
+led[3] <= PLUS1:u4.sum
+led[4] <= PLUS1:u4.chigh
+
+
+|PLUS|PLUS1:u1
+num1 => sum.IN0
+num1 => Mult1.IN0
+num2 => sum.IN1
+num2 => Mult1.IN1
+clow => sum.IN1
+clow => Mult0.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+chigh <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PLUS|PLUS1:u2
+num1 => sum.IN0
+num1 => Mult1.IN0
+num2 => sum.IN1
+num2 => Mult1.IN1
+clow => sum.IN1
+clow => Mult0.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+chigh <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PLUS|PLUS1:u3
+num1 => sum.IN0
+num1 => Mult1.IN0
+num2 => sum.IN1
+num2 => Mult1.IN1
+clow => sum.IN1
+clow => Mult0.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+chigh <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PLUS|PLUS1:u4
+num1 => sum.IN0
+num1 => Mult1.IN0
+num2 => sum.IN1
+num2 => Mult1.IN1
+clow => sum.IN1
+clow => Mult0.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+chigh <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+

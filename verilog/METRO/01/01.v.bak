@@ -1,0 +1,77 @@
+module counter
+(
+    input                clk,           // 系統 50 Mhz 時鐘
+    input                key,           // 按鈕 
+	 input                reset,         //复位键
+    output [3:0]         led,	 // 4个led为输出
+	 output [8:0]         Count1,
+    output [8:0]         Count2
+	 
+);  
+
+     reg [3:0] count;
+
+     reg [31:0] timer;
+	  reg [8:0] num [9:0];
+     reg [3:0] count1=4'b0000;
+     reg [3:0] count2=4'b0000;
+
+initial                                                                                                                           
+  begin
+         num[0] = 9'h3f;                                    
+	 num[1] = 9'h06;                                         
+	 num[2] = 9'h5b;                                       
+	 num[3] = 9'h4f;                                           
+	 num[4] = 9'h66;                                        
+	 num[5] = 9'h6d;                                         
+	 num[6] = 9'h7d;                                           
+	 num[7] = 9'h07;                                           
+	 num[8] = 9'h7f;                                          
+	 num[9] = 9'h6f;                                           
+  end 	  
+	  
+    always@(posedge clk)
+    begin    
+	 
+    if(reset ==1'b0)
+	   begin
+		count <=4'b0000;
+		count1<=4'b0000;
+		count2<=4'b0000;
+		end
+	 else
+	  
+	    if(key == 1'b0) // 按下,就累加一
+            timer <= timer + 24'd1;
+       else // 放開
+            timer <= 31'd0;    
+
+		// 當累加到 0.01 秒，LED 計數器才加一
+       if(timer == 31'd500_000) //  50_000_000 = 1秒，500_000 = 0.01 秒
+          begin 
+			  if(count1==4'b0001&&count2==4'b0101)
+	            begin
+		            count1<=4'b0000;
+		            count2<=4'b0000;
+	            end
+	        else
+			   begin
+			    if(count2==4'b1001)
+		          begin
+			         count1<=count1+4'b0001;
+			         count2<=4'b0000;
+		          end
+		       else 
+		          begin
+			         count2<=count2+4'b0001;
+			       end
+				end
+				count <= count + 4'b0001;
+			  end
+      end
+
+     assign led = ~ count; // 將 count 綁定到 LED 輸出，並且是相反 (NOT) 輸出
+     assign Count1=num[count1];
+     assign Count2=num[count2];
+	  
+endmodule
