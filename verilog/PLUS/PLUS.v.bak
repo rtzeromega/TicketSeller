@@ -1,0 +1,39 @@
+module adder1
+    (
+      input wire a,           //输入的低位进位及两个加数cin、a、b
+      input wire b,
+      input wire cin,
+      output wire sum,        //输出的和与进位
+      output wire cout
+    );
+      wire 		s1,s2,s3;   //定义中间变量
+    xor (s1,a,b);                 //调用基本异或门
+    xor (sum,s1,cin);
+    nand (s2,a,b);		//调用基本与非门
+    nand (s3,s1,cin);
+    and  (cout,s2,s3); 
+endmodule
+  
+module PLUS(num1,num2,clow,sum,chigh);
+		input num1,num2,clow;
+		output sum,chigh;
+
+		assign sum = num1^num2^clow;
+		assign chigh = ((num1^num2)*clow)+(num1*num2);
+endmodule
+
+module chuanxing(a,b,s,ci,co);
+		input [3:0] a,b;
+		output [3:0] s;
+		input ci;
+		output co;
+		wire  cout0,cout1,cout2;
+		
+		//assign {co,s} = a+b+ci;
+
+		quanjia u1(.num1(a[0]),.num2(b[0]),.clow(ci),.sum(s[0]),.chigh(cout0));
+		quanjia u2(.num1(a[1]),.num2(b[1]),.clow(cout0),.sum(s[1]),.chigh(cout1));
+		quanjia u3(.num1(a[2]),.num2(b[2]),.clow(cout1),.sum(s[2]),.chigh(cout2));
+		quanjia u4(.num1(a[3]),.num2(b[3]),.clow(cout2),.sum(s[3]),.chigh(co));
+endmodule
+

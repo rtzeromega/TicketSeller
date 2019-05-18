@@ -1,0 +1,1436 @@
+Analysis & Synthesis report for 01
+Tue Jan 01 23:03:52 2019
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: debounce:u1
+ 14. Parameter Settings for User Entity Instance: debounce:u2
+ 15. Parameter Settings for User Entity Instance: debounce:u3
+ 16. Parameter Settings for User Entity Instance: debounce:u4
+ 17. Parameter Settings for User Entity Instance: debounce:u5
+ 18. Parameter Settings for User Entity Instance: debounce:u6
+ 19. Parameter Settings for User Entity Instance: debounce:u7
+ 20. Parameter Settings for User Entity Instance: debounce:u8
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 27. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 28. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 29. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 30. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 31. lpm_mult Parameter Settings by Entity Instance
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Jan 01 23:03:51 2019       ;
+; Quartus Prime Version       ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name               ; 01                                          ;
+; Top-level Entity Name       ; metro                                       ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 1,259                                       ;
+; Total pins                  ; 51                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM1270T144C3      ;                    ;
+; Top-level entity name                                                      ; metro              ; 01                 ;
+; Family name                                                                ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; 01.v                             ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/METRO/01/01.v                                            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal161.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc      ;         ;
+; db/lpm_divide_tvl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/lpm_divide_tvl.tdf                           ;         ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/sign_div_unsign_ekh.tdf                      ;         ;
+; db/alt_u_div_nie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/alt_u_div_nie.tdf                            ;         ;
+; db/add_sub_e7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_e7c.tdf                              ;         ;
+; db/add_sub_f7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_f7c.tdf                              ;         ;
+; db/add_sub_g7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_g7c.tdf                              ;         ;
+; db/add_sub_h7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_h7c.tdf                              ;         ;
+; db/add_sub_i7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_i7c.tdf                              ;         ;
+; db/add_sub_j7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_j7c.tdf                              ;         ;
+; db/add_sub_k7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_k7c.tdf                              ;         ;
+; db/add_sub_l7c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/add_sub_l7c.tdf                              ;         ;
+; db/lpm_divide_qvl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/lpm_divide_qvl.tdf                           ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/sign_div_unsign_bkh.tdf                      ;         ;
+; db/alt_u_div_hie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/alt_u_div_hie.tdf                            ;         ;
+; db/lpm_divide_tnl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/lpm_divide_tnl.tdf                           ;         ;
+; db/lpm_divide_71m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/lpm_divide_71m.tdf                           ;         ;
+; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/sign_div_unsign_olh.tdf                      ;         ;
+; db/alt_u_div_ble.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/alt_u_div_ble.tdf                            ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/multcore.inc        ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/bypassff.inc        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altshift.inc        ;         ;
+; db/mult_9os.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf                                 ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 1259  ;
+;     -- Combinational with no register       ; 1134  ;
+;     -- Register only                        ; 24    ;
+;     -- Combinational with a register        ; 101   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 306   ;
+;     -- 3 input functions                    ; 344   ;
+;     -- 2 input functions                    ; 362   ;
+;     -- 1 input functions                    ; 221   ;
+;     -- 0 input functions                    ; 2     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 883   ;
+;     -- arithmetic mode                      ; 376   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 17    ;
+;     -- asynchronous clear/load mode         ; 51    ;
+;                                             ;       ;
+; Total registers                             ; 125   ;
+; Total logic cells in carry chains           ; 501   ;
+; I/O pins                                    ; 51    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 86    ;
+; Total fan-out                               ; 3465  ;
+; Average fan-out                             ; 2.65  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                               ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node              ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                           ; Entity Name         ; Library Name ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |metro                                  ; 1259 (442)  ; 125          ; 0          ; 51   ; 0            ; 1134 (381)   ; 24 (0)            ; 101 (61)         ; 501 (97)        ; 0 (0)      ; |metro                                                                                                                        ; metro               ; work         ;
+;    |debounce:u1|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u1                                                                                                            ; debounce            ; work         ;
+;    |debounce:u2|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u2                                                                                                            ; debounce            ; work         ;
+;    |debounce:u3|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u3                                                                                                            ; debounce            ; work         ;
+;    |debounce:u4|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u4                                                                                                            ; debounce            ; work         ;
+;    |debounce:u5|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u5                                                                                                            ; debounce            ; work         ;
+;    |debounce:u6|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u6                                                                                                            ; debounce            ; work         ;
+;    |debounce:u7|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u7                                                                                                            ; debounce            ; work         ;
+;    |debounce:u8|                        ; 11 (11)     ; 8            ; 0          ; 0    ; 0            ; 3 (3)        ; 3 (3)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |metro|debounce:u8                                                                                                            ; debounce            ; work         ;
+;    |lpm_divide:Div0|                    ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div0                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_qvl:auto_generated|   ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated                                                                          ; lpm_divide_qvl      ; work         ;
+;          |sign_div_unsign_bkh:divider|  ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider                                              ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_hie:divider|     ; 58 (26)     ; 0            ; 0          ; 0    ; 0            ; 58 (26)      ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider                        ; alt_u_div_hie       ; work         ;
+;                |add_sub_h7c:add_sub_3|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_h7c:add_sub_3  ; add_sub_h7c         ; work         ;
+;                |add_sub_i7c:add_sub_4|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_4  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_5|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_5  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_6|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_6  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_7|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |metro|lpm_divide:Div0|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_7  ; add_sub_i7c         ; work         ;
+;    |lpm_divide:Div1|                    ; 27 (0)      ; 0            ; 0          ; 0    ; 0            ; 27 (0)       ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div1                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_tvl:auto_generated|   ; 27 (0)      ; 0            ; 0          ; 0    ; 0            ; 27 (0)       ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div1|lpm_divide_tvl:auto_generated                                                                          ; lpm_divide_tvl      ; work         ;
+;          |sign_div_unsign_ekh:divider|  ; 27 (0)      ; 0            ; 0          ; 0    ; 0            ; 27 (0)       ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div1|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider                                              ; sign_div_unsign_ekh ; work         ;
+;             |alt_u_div_nie:divider|     ; 27 (12)     ; 0            ; 0          ; 0    ; 0            ; 27 (12)      ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div1|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_nie:divider                        ; alt_u_div_nie       ; work         ;
+;                |add_sub_k7c:add_sub_6|  ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |metro|lpm_divide:Div1|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_nie:divider|add_sub_k7c:add_sub_6  ; add_sub_k7c         ; work         ;
+;                |add_sub_l7c:add_sub_7|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div1|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_nie:divider|add_sub_l7c:add_sub_7  ; add_sub_l7c         ; work         ;
+;    |lpm_divide:Div2|                    ; 368 (0)     ; 0            ; 0          ; 0    ; 0            ; 368 (0)      ; 0 (0)             ; 0 (0)            ; 200 (0)         ; 0 (0)      ; |metro|lpm_divide:Div2                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_71m:auto_generated|   ; 368 (0)     ; 0            ; 0          ; 0    ; 0            ; 368 (0)      ; 0 (0)             ; 0 (0)            ; 200 (0)         ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated                                                                          ; lpm_divide_71m      ; work         ;
+;          |sign_div_unsign_olh:divider|  ; 368 (0)     ; 0            ; 0          ; 0    ; 0            ; 368 (0)      ; 0 (0)             ; 0 (0)            ; 200 (0)         ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider                                              ; sign_div_unsign_olh ; work         ;
+;             |alt_u_div_ble:divider|     ; 368 (168)   ; 0            ; 0          ; 0    ; 0            ; 368 (168)    ; 0 (0)             ; 0 (0)            ; 200 (0)         ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider                        ; alt_u_div_ble       ; work         ;
+;                |add_sub_h7c:add_sub_3|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_h7c:add_sub_3  ; add_sub_h7c         ; work         ;
+;                |add_sub_i7c:add_sub_10| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_10 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_11| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_11 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_12| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_12 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_13| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_13 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_14| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_14 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_15| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_15 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_16| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_16 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_17| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_17 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_18| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_18 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_19| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_19 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_20| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_20 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_21| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_21 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_22| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_22 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_23| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_23 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_24| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_24 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_25| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_25 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_26| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_26 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_27| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_27 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_28| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_28 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_29| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_29 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_30| ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_30 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_31| ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_31 ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_4|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_4  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_5|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_5  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_6|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_6  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_7|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_7  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_8|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_8  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_9|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div2|lpm_divide_71m:auto_generated|sign_div_unsign_olh:divider|alt_u_div_ble:divider|add_sub_i7c:add_sub_9  ; add_sub_i7c         ; work         ;
+;    |lpm_divide:Div3|                    ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div3                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_qvl:auto_generated|   ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated                                                                          ; lpm_divide_qvl      ; work         ;
+;          |sign_div_unsign_bkh:divider|  ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider                                              ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_hie:divider|     ; 58 (26)     ; 0            ; 0          ; 0    ; 0            ; 58 (26)      ; 0 (0)             ; 0 (0)            ; 32 (0)          ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider                        ; alt_u_div_hie       ; work         ;
+;                |add_sub_h7c:add_sub_3|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_h7c:add_sub_3  ; add_sub_h7c         ; work         ;
+;                |add_sub_i7c:add_sub_4|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_4  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_5|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_5  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_6|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_6  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_7|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |metro|lpm_divide:Div3|lpm_divide_qvl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_7  ; add_sub_i7c         ; work         ;
+;    |lpm_divide:Div4|                    ; 27 (0)      ; 0            ; 0          ; 0    ; 0            ; 27 (0)       ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div4                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_tvl:auto_generated|   ; 27 (0)      ; 0            ; 0          ; 0    ; 0            ; 27 (0)       ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div4|lpm_divide_tvl:auto_generated                                                                          ; lpm_divide_tvl      ; work         ;
+;          |sign_div_unsign_ekh:divider|  ; 27 (0)      ; 0            ; 0          ; 0    ; 0            ; 27 (0)       ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div4|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider                                              ; sign_div_unsign_ekh ; work         ;
+;             |alt_u_div_nie:divider|     ; 27 (12)     ; 0            ; 0          ; 0    ; 0            ; 27 (12)      ; 0 (0)             ; 0 (0)            ; 15 (0)          ; 0 (0)      ; |metro|lpm_divide:Div4|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_nie:divider                        ; alt_u_div_nie       ; work         ;
+;                |add_sub_k7c:add_sub_6|  ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |metro|lpm_divide:Div4|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_nie:divider|add_sub_k7c:add_sub_6  ; add_sub_k7c         ; work         ;
+;                |add_sub_l7c:add_sub_7|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Div4|lpm_divide_tvl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_nie:divider|add_sub_l7c:add_sub_7  ; add_sub_l7c         ; work         ;
+;    |lpm_divide:Mod0|                    ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod0                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_tnl:auto_generated|   ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated                                                                          ; lpm_divide_tnl      ; work         ;
+;          |sign_div_unsign_bkh:divider|  ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider                                              ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_hie:divider|     ; 58 (24)     ; 0            ; 0          ; 0    ; 0            ; 58 (24)      ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider                        ; alt_u_div_hie       ; work         ;
+;                |add_sub_h7c:add_sub_3|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_h7c:add_sub_3  ; add_sub_h7c         ; work         ;
+;                |add_sub_i7c:add_sub_4|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_4  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_5|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_5  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_6|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_6  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_7|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod0|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_7  ; add_sub_i7c         ; work         ;
+;    |lpm_divide:Mod1|                    ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod1                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_tnl:auto_generated|   ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod1|lpm_divide_tnl:auto_generated                                                                          ; lpm_divide_tnl      ; work         ;
+;          |sign_div_unsign_bkh:divider|  ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod1|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider                                              ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_hie:divider|     ; 21 (9)      ; 0            ; 0          ; 0    ; 0            ; 21 (9)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod1|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider                        ; alt_u_div_hie       ; work         ;
+;                |add_sub_i7c:add_sub_6|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |metro|lpm_divide:Mod1|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_6  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_7|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod1|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_7  ; add_sub_i7c         ; work         ;
+;    |lpm_divide:Mod2|                    ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod2                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_tnl:auto_generated|   ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated                                                                          ; lpm_divide_tnl      ; work         ;
+;          |sign_div_unsign_bkh:divider|  ; 58 (0)      ; 0            ; 0          ; 0    ; 0            ; 58 (0)       ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider                                              ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_hie:divider|     ; 58 (24)     ; 0            ; 0          ; 0    ; 0            ; 58 (24)      ; 0 (0)             ; 0 (0)            ; 34 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider                        ; alt_u_div_hie       ; work         ;
+;                |add_sub_h7c:add_sub_3|  ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_h7c:add_sub_3  ; add_sub_h7c         ; work         ;
+;                |add_sub_i7c:add_sub_4|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_4  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_5|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_5  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_6|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_6  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_7|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod2|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_7  ; add_sub_i7c         ; work         ;
+;    |lpm_divide:Mod3|                    ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod3                                                                                                        ; lpm_divide          ; work         ;
+;       |lpm_divide_tnl:auto_generated|   ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod3|lpm_divide_tnl:auto_generated                                                                          ; lpm_divide_tnl      ; work         ;
+;          |sign_div_unsign_bkh:divider|  ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod3|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider                                              ; sign_div_unsign_bkh ; work         ;
+;             |alt_u_div_hie:divider|     ; 18 (6)      ; 0            ; 0          ; 0    ; 0            ; 18 (6)       ; 0 (0)             ; 0 (0)            ; 12 (0)          ; 0 (0)      ; |metro|lpm_divide:Mod3|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider                        ; alt_u_div_hie       ; work         ;
+;                |add_sub_i7c:add_sub_6|  ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |metro|lpm_divide:Mod3|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_6  ; add_sub_i7c         ; work         ;
+;                |add_sub_i7c:add_sub_7|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |metro|lpm_divide:Mod3|lpm_divide_tnl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_hie:divider|add_sub_i7c:add_sub_7  ; add_sub_i7c         ; work         ;
+;    |lpm_mult:Mult0|                     ; 36 (0)      ; 0            ; 0          ; 0    ; 0            ; 36 (0)       ; 0 (0)             ; 0 (0)            ; 18 (0)          ; 0 (0)      ; |metro|lpm_mult:Mult0                                                                                                         ; lpm_mult            ; work         ;
+;       |mult_9os:auto_generated|         ; 36 (36)     ; 0            ; 0          ; 0    ; 0            ; 36 (36)      ; 0 (0)             ; 0 (0)            ; 18 (18)         ; 0 (0)      ; |metro|lpm_mult:Mult0|mult_9os:auto_generated                                                                                 ; mult_9os            ; work         ;
++-----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; std.101_3924                                         ; std.111             ; yes                    ;
+; rcol[0]$latch                                        ; sw                  ; yes                    ;
+; rcol[1]$latch                                        ; sw                  ; yes                    ;
+; rcol[2]$latch                                        ; sw                  ; yes                    ;
+; rcol[3]$latch                                        ; sw                  ; yes                    ;
+; rcol[4]$latch                                        ; sw                  ; yes                    ;
+; rcol[5]$latch                                        ; sw                  ; yes                    ;
+; rcol[6]$latch                                        ; sw                  ; yes                    ;
+; rcol[7]$latch                                        ; sw                  ; yes                    ;
+; gcol[0]$latch                                        ; sw                  ; yes                    ;
+; gcol[1]$latch                                        ; sw                  ; yes                    ;
+; gcol[2]$latch                                        ; sw                  ; yes                    ;
+; gcol[3]$latch                                        ; sw                  ; yes                    ;
+; gcol[4]$latch                                        ; sw                  ; yes                    ;
+; gcol[5]$latch                                        ; sw                  ; yes                    ;
+; gcol[6]$latch                                        ; sw                  ; yes                    ;
+; gcol[7]$latch                                        ; sw                  ; yes                    ;
+; std.100_3940                                         ; std.111             ; yes                    ;
+; data[0]                                              ; sw                  ; yes                    ;
+; data[1]                                              ; sw                  ; yes                    ;
+; data[2]                                              ; sw                  ; yes                    ;
+; data[3]                                              ; sw                  ; yes                    ;
+; r5[0]                                                ; r7[1]               ; yes                    ;
+; r6[0]                                                ; r7[1]               ; yes                    ;
+; r7[0]                                                ; r7[1]               ; yes                    ;
+; r4[0]                                                ; r7[1]               ; yes                    ;
+; r1[0]                                                ; r7[1]               ; yes                    ;
+; r2[0]                                                ; r7[1]               ; yes                    ;
+; r3[0]                                                ; r7[1]               ; yes                    ;
+; r0[0]                                                ; r7[1]               ; yes                    ;
+; r5[1]                                                ; r7[1]               ; yes                    ;
+; r6[1]                                                ; r7[1]               ; yes                    ;
+; r7[1]                                                ; r7[1]               ; yes                    ;
+; r4[1]                                                ; r7[1]               ; yes                    ;
+; r1[1]                                                ; r7[1]               ; yes                    ;
+; r2[1]                                                ; r7[1]               ; yes                    ;
+; r3[1]                                                ; r7[1]               ; yes                    ;
+; r0[1]                                                ; r7[1]               ; yes                    ;
+; r5[2]                                                ; r7[1]               ; yes                    ;
+; r6[2]                                                ; r7[1]               ; yes                    ;
+; r7[2]                                                ; r7[1]               ; yes                    ;
+; r4[2]                                                ; r7[1]               ; yes                    ;
+; r1[2]                                                ; r7[1]               ; yes                    ;
+; r2[2]                                                ; r7[1]               ; yes                    ;
+; r3[2]                                                ; r7[1]               ; yes                    ;
+; r0[2]                                                ; r7[1]               ; yes                    ;
+; r5[3]                                                ; r7[1]               ; yes                    ;
+; r6[3]                                                ; r7[1]               ; yes                    ;
+; r7[3]                                                ; r7[1]               ; yes                    ;
+; r4[3]                                                ; r7[1]               ; yes                    ;
+; r1[3]                                                ; r7[1]               ; yes                    ;
+; r2[3]                                                ; r7[1]               ; yes                    ;
+; r3[3]                                                ; r7[1]               ; yes                    ;
+; r0[3]                                                ; r7[1]               ; yes                    ;
+; r5[4]                                                ; r7[1]               ; yes                    ;
+; r6[4]                                                ; r7[1]               ; yes                    ;
+; r7[4]                                                ; r7[1]               ; yes                    ;
+; r4[4]                                                ; r7[1]               ; yes                    ;
+; r1[4]                                                ; r7[1]               ; yes                    ;
+; r2[4]                                                ; r7[1]               ; yes                    ;
+; r3[4]                                                ; r7[1]               ; yes                    ;
+; r0[4]                                                ; r7[1]               ; yes                    ;
+; r6[5]                                                ; r7[1]               ; yes                    ;
+; r5[5]                                                ; r7[1]               ; yes                    ;
+; r7[5]                                                ; r7[1]               ; yes                    ;
+; r4[5]                                                ; r7[1]               ; yes                    ;
+; r1[5]                                                ; r7[1]               ; yes                    ;
+; r2[5]                                                ; r7[1]               ; yes                    ;
+; r3[5]                                                ; r7[1]               ; yes                    ;
+; r0[5]                                                ; r7[1]               ; yes                    ;
+; r6[6]                                                ; r7[1]               ; yes                    ;
+; r5[6]                                                ; r7[1]               ; yes                    ;
+; r7[6]                                                ; r7[1]               ; yes                    ;
+; r4[6]                                                ; r7[1]               ; yes                    ;
+; r1[6]                                                ; r7[1]               ; yes                    ;
+; r2[6]                                                ; r7[1]               ; yes                    ;
+; r3[6]                                                ; r7[1]               ; yes                    ;
+; r0[6]                                                ; r7[1]               ; yes                    ;
+; r6[7]                                                ; r7[1]               ; yes                    ;
+; r5[7]                                                ; r7[1]               ; yes                    ;
+; r7[7]                                                ; r7[1]               ; yes                    ;
+; r4[7]                                                ; r7[1]               ; yes                    ;
+; r1[7]                                                ; r7[1]               ; yes                    ;
+; r2[7]                                                ; r7[1]               ; yes                    ;
+; r3[7]                                                ; r7[1]               ; yes                    ;
+; r0[7]                                                ; r7[1]               ; yes                    ;
+; g6[0]                                                ; r7[1]               ; yes                    ;
+; g5[0]                                                ; r7[1]               ; yes                    ;
+; g7[0]                                                ; r7[1]               ; yes                    ;
+; g4[0]                                                ; r7[1]               ; yes                    ;
+; g1[0]                                                ; r7[1]               ; yes                    ;
+; g2[0]                                                ; r7[1]               ; yes                    ;
+; g3[0]                                                ; r7[1]               ; yes                    ;
+; g0[0]                                                ; r7[1]               ; yes                    ;
+; g6[1]                                                ; r7[1]               ; yes                    ;
+; g5[1]                                                ; r7[1]               ; yes                    ;
+; g7[1]                                                ; r7[1]               ; yes                    ;
+; g4[1]                                                ; r7[1]               ; yes                    ;
+; g1[1]                                                ; r7[1]               ; yes                    ;
+; g2[1]                                                ; r7[1]               ; yes                    ;
+; Number of user-specified and inferred latches = 169  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; count5[0]                             ; Stuck at GND due to stuck port data_in ;
+; cnt[0]                                ; Merged with cntp[0]                    ;
+; cnt[1]                                ; Merged with cntp[1]                    ;
+; cnt[2]                                ; Merged with cntp[2]                    ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 125   ;
+; Number of registers using Synchronous Clear  ; 17    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 51    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; test[1]                                ; 5       ;
+; test[0]                                ; 5       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |metro|ds                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |metro|g5[3]               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |metro|g5[0]               ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; No         ; |metro|g1[3]               ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |metro|Mux6                ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |metro|r5[5]               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |metro|std.100             ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |metro|fee                 ;
+; 18:1               ; 4 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |metro|data                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u2 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u3 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u4 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u5 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u6 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u7 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:u8 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_tvl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_tvl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_qvl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_tnl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_qvl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_tnl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_tnl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_tnl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_71m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8        ; Untyped             ;
+; LPM_WIDTHB                                     ; 4        ; Untyped             ;
+; LPM_WIDTHP                                     ; 12       ; Untyped             ;
+; LPM_WIDTHR                                     ; 12       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX II   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_9os ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8              ;
+;     -- LPM_WIDTHB                     ; 4              ;
+;     -- LPM_WIDTHP                     ; 12             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Tue Jan 01 23:03:09 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 01 -c 01
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (10229): Verilog HDL Expression warning at 01.v(56): truncated literal to match 12 bits File: C:/intelFPGA_lite/METRO/01/01.v Line: 56
+Info (12021): Found 2 design units, including 2 entities, in source file 01.v
+    Info (12023): Found entity 1: metro File: C:/intelFPGA_lite/METRO/01/01.v Line: 1
+    Info (12023): Found entity 2: debounce File: C:/intelFPGA_lite/METRO/01/01.v Line: 482
+Info (12127): Elaborating entity "metro" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at 01.v(48): truncated value with size 32 to match size of target (12) File: C:/intelFPGA_lite/METRO/01/01.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at 01.v(55): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 55
+Warning (10230): Verilog HDL assignment warning at 01.v(72): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 72
+Warning (10230): Verilog HDL assignment warning at 01.v(87): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 87
+Warning (10230): Verilog HDL assignment warning at 01.v(102): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 102
+Warning (10230): Verilog HDL assignment warning at 01.v(117): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 117
+Warning (10235): Verilog HDL Always Construct warning at 01.v(176): variable "count5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 176
+Warning (10235): Verilog HDL Always Construct warning at 01.v(176): variable "count4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 176
+Warning (10235): Verilog HDL Always Construct warning at 01.v(176): variable "count3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 176
+Warning (10235): Verilog HDL Always Construct warning at 01.v(177): variable "pay" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 177
+Warning (10230): Verilog HDL assignment warning at 01.v(177): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 177
+Warning (10235): Verilog HDL Always Construct warning at 01.v(178): variable "pay" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 178
+Warning (10230): Verilog HDL assignment warning at 01.v(178): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 178
+Warning (10235): Verilog HDL Always Construct warning at 01.v(179): variable "pay" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 179
+Warning (10230): Verilog HDL assignment warning at 01.v(179): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 179
+Warning (10235): Verilog HDL Always Construct warning at 01.v(182): variable "test" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 182
+Warning (10235): Verilog HDL Always Construct warning at 01.v(190): variable "std" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 190
+Warning (10235): Verilog HDL Always Construct warning at 01.v(198): variable "count2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 198
+Warning (10235): Verilog HDL Always Construct warning at 01.v(198): variable "count1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 198
+Warning (10235): Verilog HDL Always Construct warning at 01.v(199): variable "count0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 199
+Warning (10230): Verilog HDL assignment warning at 01.v(199): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 199
+Warning (10235): Verilog HDL Always Construct warning at 01.v(200): variable "count2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 200
+Warning (10235): Verilog HDL Always Construct warning at 01.v(200): variable "count1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 200
+Warning (10235): Verilog HDL Always Construct warning at 01.v(201): variable "count0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 201
+Warning (10230): Verilog HDL assignment warning at 01.v(201): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 201
+Warning (10235): Verilog HDL Always Construct warning at 01.v(202): variable "count2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 202
+Warning (10235): Verilog HDL Always Construct warning at 01.v(202): variable "count1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 202
+Warning (10235): Verilog HDL Always Construct warning at 01.v(203): variable "count0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 203
+Warning (10230): Verilog HDL assignment warning at 01.v(203): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 203
+Warning (10235): Verilog HDL Always Construct warning at 01.v(204): variable "count2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 204
+Warning (10235): Verilog HDL Always Construct warning at 01.v(204): variable "count1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 204
+Warning (10235): Verilog HDL Always Construct warning at 01.v(205): variable "count0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 205
+Warning (10230): Verilog HDL assignment warning at 01.v(205): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 205
+Warning (10235): Verilog HDL Always Construct warning at 01.v(207): variable "count2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+Warning (10235): Verilog HDL Always Construct warning at 01.v(207): variable "count1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+Warning (10235): Verilog HDL Always Construct warning at 01.v(207): variable "count0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+Warning (10230): Verilog HDL assignment warning at 01.v(207): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+Warning (10235): Verilog HDL Always Construct warning at 01.v(208): variable "pay" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 208
+Warning (10235): Verilog HDL Always Construct warning at 01.v(208): variable "fee" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 208
+Warning (10235): Verilog HDL Always Construct warning at 01.v(209): variable "pay" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 209
+Warning (10235): Verilog HDL Always Construct warning at 01.v(209): variable "fee" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 209
+Warning (10235): Verilog HDL Always Construct warning at 01.v(213): variable "pay" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 213
+Warning (10235): Verilog HDL Always Construct warning at 01.v(213): variable "fee" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 213
+Warning (10235): Verilog HDL Always Construct warning at 01.v(216): variable "change" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 216
+Warning (10230): Verilog HDL assignment warning at 01.v(216): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 216
+Warning (10235): Verilog HDL Always Construct warning at 01.v(217): variable "change" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+Warning (10230): Verilog HDL assignment warning at 01.v(217): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+Warning (10235): Verilog HDL Always Construct warning at 01.v(218): variable "change" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 218
+Warning (10230): Verilog HDL assignment warning at 01.v(218): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 218
+Warning (10240): Verilog HDL Always Construct warning at 01.v(174): inferring latch(es) for variable "std", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (10240): Verilog HDL Always Construct warning at 01.v(174): inferring latch(es) for variable "fee", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (10240): Verilog HDL Always Construct warning at 01.v(174): inferring latch(es) for variable "change", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (10230): Verilog HDL assignment warning at 01.v(240): truncated value with size 32 to match size of target (3) File: C:/intelFPGA_lite/METRO/01/01.v Line: 240
+Warning (10235): Verilog HDL Always Construct warning at 01.v(252): variable "cntp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 252
+Warning (10235): Verilog HDL Always Construct warning at 01.v(267): variable "count0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 267
+Warning (10235): Verilog HDL Always Construct warning at 01.v(269): variable "count1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 269
+Warning (10235): Verilog HDL Always Construct warning at 01.v(270): variable "count2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 270
+Warning (10235): Verilog HDL Always Construct warning at 01.v(272): variable "pay1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 272
+Warning (10235): Verilog HDL Always Construct warning at 01.v(273): variable "pay10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 273
+Warning (10235): Verilog HDL Always Construct warning at 01.v(274): variable "pay100" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 274
+Warning (10230): Verilog HDL assignment warning at 01.v(275): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 275
+Warning (10230): Verilog HDL assignment warning at 01.v(275): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/METRO/01/01.v Line: 275
+Warning (10240): Verilog HDL Always Construct warning at 01.v(244): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 244
+Warning (10230): Verilog HDL assignment warning at 01.v(295): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/METRO/01/01.v Line: 295
+Warning (10235): Verilog HDL Always Construct warning at 01.v(326): variable "sw" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 326
+Warning (10235): Verilog HDL Always Construct warning at 01.v(331): variable "r7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 331
+Warning (10235): Verilog HDL Always Construct warning at 01.v(331): variable "g7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 331
+Warning (10235): Verilog HDL Always Construct warning at 01.v(332): variable "r6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 332
+Warning (10235): Verilog HDL Always Construct warning at 01.v(332): variable "g6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 332
+Warning (10235): Verilog HDL Always Construct warning at 01.v(333): variable "r5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 333
+Warning (10235): Verilog HDL Always Construct warning at 01.v(333): variable "g5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 333
+Warning (10235): Verilog HDL Always Construct warning at 01.v(334): variable "r4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 334
+Warning (10235): Verilog HDL Always Construct warning at 01.v(334): variable "g4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 334
+Warning (10235): Verilog HDL Always Construct warning at 01.v(335): variable "r3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 335
+Warning (10235): Verilog HDL Always Construct warning at 01.v(335): variable "g3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 335
+Warning (10235): Verilog HDL Always Construct warning at 01.v(336): variable "r2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 336
+Warning (10235): Verilog HDL Always Construct warning at 01.v(336): variable "g2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 336
+Warning (10235): Verilog HDL Always Construct warning at 01.v(337): variable "r1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 337
+Warning (10235): Verilog HDL Always Construct warning at 01.v(337): variable "g1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 337
+Warning (10235): Verilog HDL Always Construct warning at 01.v(338): variable "r0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 338
+Warning (10235): Verilog HDL Always Construct warning at 01.v(338): variable "g0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 338
+Warning (10240): Verilog HDL Always Construct warning at 01.v(325): inferring latch(es) for variable "rcol", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Warning (10240): Verilog HDL Always Construct warning at 01.v(325): inferring latch(es) for variable "gcol", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Warning (10230): Verilog HDL assignment warning at 01.v(348): truncated value with size 32 to match size of target (10) File: C:/intelFPGA_lite/METRO/01/01.v Line: 348
+Warning (10230): Verilog HDL assignment warning at 01.v(358): truncated value with size 32 to match size of target (2) File: C:/intelFPGA_lite/METRO/01/01.v Line: 358
+Warning (10235): Verilog HDL Always Construct warning at 01.v(367): variable "cntp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 367
+Warning (10235): Verilog HDL Always Construct warning at 01.v(417): variable "cntp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 417
+Warning (10235): Verilog HDL Always Construct warning at 01.v(430): variable "cntp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 430
+Warning (10235): Verilog HDL Always Construct warning at 01.v(456): variable "cntp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/METRO/01/01.v Line: 456
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r0", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g0", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r1", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g1", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r2", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g2", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r3", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g3", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r4", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g4", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r5", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g5", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r6", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g6", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "r7", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (10240): Verilog HDL Always Construct warning at 01.v(364): inferring latch(es) for variable "g7", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g7[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r7[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g6[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r6[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g5[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r5[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g4[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r4[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g3[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r3[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g2[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r2[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g1[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r1[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "g0[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[0]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[1]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[2]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[3]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[4]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[5]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[6]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "r0[7]" at 01.v(364) File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Info (10041): Inferred latch for "gcol[0]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "gcol[1]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "gcol[2]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "gcol[3]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "gcol[4]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "gcol[5]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "gcol[6]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "gcol[7]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[0]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[1]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[2]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[3]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[4]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[5]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[6]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "rcol[7]" at 01.v(325) File: C:/intelFPGA_lite/METRO/01/01.v Line: 325
+Info (10041): Inferred latch for "data[0]" at 01.v(244) File: C:/intelFPGA_lite/METRO/01/01.v Line: 244
+Info (10041): Inferred latch for "data[1]" at 01.v(244) File: C:/intelFPGA_lite/METRO/01/01.v Line: 244
+Info (10041): Inferred latch for "data[2]" at 01.v(244) File: C:/intelFPGA_lite/METRO/01/01.v Line: 244
+Info (10041): Inferred latch for "data[3]" at 01.v(244) File: C:/intelFPGA_lite/METRO/01/01.v Line: 244
+Info (10041): Inferred latch for "change[0]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "change[1]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "change[2]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "change[3]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "change[4]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "change[5]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "change[6]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "change[7]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[0]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[1]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[2]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[3]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[4]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[5]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[6]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "fee[7]" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "std.111" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "std.101" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "std.100" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "std.001" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (10041): Inferred latch for "std.000" at 01.v(174) File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:u1" File: C:/intelFPGA_lite/METRO/01/01.v Line: 24
+Info (278001): Inferred 10 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div4" File: C:/intelFPGA_lite/METRO/01/01.v Line: 218
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/intelFPGA_lite/METRO/01/01.v Line: 179
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/intelFPGA_lite/METRO/01/01.v Line: 178
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/intelFPGA_lite/METRO/01/01.v Line: 178
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/intelFPGA_lite/METRO/01/01.v Line: 216
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/intelFPGA_lite/METRO/01/01.v Line: 177
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div4" File: C:/intelFPGA_lite/METRO/01/01.v Line: 218
+Info (12133): Instantiated megafunction "lpm_divide:Div4" with the following parameter: File: C:/intelFPGA_lite/METRO/01/01.v Line: 218
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_tvl.tdf
+    Info (12023): Found entity 1: lpm_divide_tvl File: C:/intelFPGA_lite/METRO/01/db/lpm_divide_tvl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ekh File: C:/intelFPGA_lite/METRO/01/db/sign_div_unsign_ekh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_nie.tdf
+    Info (12023): Found entity 1: alt_u_div_nie File: C:/intelFPGA_lite/METRO/01/db/alt_u_div_nie.tdf Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_e7c.tdf
+    Info (12023): Found entity 1: add_sub_e7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_e7c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_f7c.tdf
+    Info (12023): Found entity 1: add_sub_f7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_f7c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_g7c.tdf
+    Info (12023): Found entity 1: add_sub_g7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_g7c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_h7c.tdf
+    Info (12023): Found entity 1: add_sub_h7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_h7c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_i7c.tdf
+    Info (12023): Found entity 1: add_sub_i7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_i7c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_j7c.tdf
+    Info (12023): Found entity 1: add_sub_j7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_j7c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k7c.tdf
+    Info (12023): Found entity 1: add_sub_k7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_k7c.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_l7c.tdf
+    Info (12023): Found entity 1: add_sub_l7c File: C:/intelFPGA_lite/METRO/01/db/add_sub_l7c.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div3" File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+Info (12133): Instantiated megafunction "lpm_divide:Div3" with the following parameter: File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qvl.tdf
+    Info (12023): Found entity 1: lpm_divide_qvl File: C:/intelFPGA_lite/METRO/01/db/lpm_divide_qvl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/intelFPGA_lite/METRO/01/db/sign_div_unsign_bkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_hie.tdf
+    Info (12023): Found entity 1: alt_u_div_hie File: C:/intelFPGA_lite/METRO/01/db/alt_u_div_hie.tdf Line: 33
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: C:/intelFPGA_lite/METRO/01/01.v Line: 217
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_tnl.tdf
+    Info (12023): Found entity 1: lpm_divide_tnl File: C:/intelFPGA_lite/METRO/01/db/lpm_divide_tnl.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_71m.tdf
+    Info (12023): Found entity 1: lpm_divide_71m File: C:/intelFPGA_lite/METRO/01/db/lpm_divide_71m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh File: C:/intelFPGA_lite/METRO/01/db/sign_div_unsign_olh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ble.tdf
+    Info (12023): Found entity 1: alt_u_div_ble File: C:/intelFPGA_lite/METRO/01/db/alt_u_div_ble.tdf Line: 33
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/intelFPGA_lite/METRO/01/01.v Line: 207
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "12"
+    Info (12134): Parameter "LPM_WIDTHR" = "12"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_9os.tdf
+    Info (12023): Found entity 1: mult_9os File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 29
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le3a[9]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 41
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le5a[8]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 43
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le5a[4]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 43
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le3a[8]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 41
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le4a[9]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 42
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le4a[8]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 42
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le4a[7]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 42
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le4a[6]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 42
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le5a[7]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 43
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le5a[6]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 43
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_9os:auto_generated|le5a[5]" File: C:/intelFPGA_lite/METRO/01/db/mult_9os.tdf Line: 43
+Info (13014): Ignored 40 buffer(s)
+    Info (13019): Ignored 40 SOFT buffer(s)
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "r4[7]" merged with LATCH primitive "r5[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[0]" merged with LATCH primitive "r5[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r2[7]" merged with LATCH primitive "r5[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r7[1]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[6]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[1]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r7[6]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g6[2]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g6[5]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r6[2]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r6[5]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r6[7]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g4[2]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g4[5]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r4[2]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r4[5]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[2]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[5]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[2]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[5]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[0]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[2]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[5]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[7]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[0]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[1]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[6]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[7]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r0[1]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r0[6]" merged with LATCH primitive "r6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r7[7]" merged with LATCH primitive "r7[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r0[0]" merged with LATCH primitive "r7[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r0[7]" merged with LATCH primitive "r7[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r5[7]" merged with LATCH primitive "r4[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[7]" merged with LATCH primitive "r4[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g2[5]" merged with LATCH primitive "r4[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r2[0]" merged with LATCH primitive "r4[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g2[1]" merged with LATCH primitive "r5[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r2[6]" merged with LATCH primitive "r5[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r6[6]" merged with LATCH primitive "r6[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[1]" merged with LATCH primitive "r6[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[6]" merged with LATCH primitive "r6[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g4[1]" merged with LATCH primitive "r4[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g4[6]" merged with LATCH primitive "r4[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r4[6]" merged with LATCH primitive "r4[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[1]" merged with LATCH primitive "r4[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[6]" merged with LATCH primitive "r4[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[1]" merged with LATCH primitive "r4[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[6]" merged with LATCH primitive "r4[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r5[6]" merged with LATCH primitive "r2[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g2[6]" merged with LATCH primitive "r2[1]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[5]" merged with LATCH primitive "r7[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[2]" merged with LATCH primitive "r7[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r7[5]" merged with LATCH primitive "r7[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g1[1]" merged with LATCH primitive "r7[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g1[6]" merged with LATCH primitive "r7[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r5[5]" merged with LATCH primitive "r2[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g6[1]" merged with LATCH primitive "r0[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g6[6]" merged with LATCH primitive "r0[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[2]" merged with LATCH primitive "r0[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[5]" merged with LATCH primitive "r0[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r0[5]" merged with LATCH primitive "r0[2]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g2[3]" merged with LATCH primitive "r5[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r2[4]" merged with LATCH primitive "r5[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r7[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r7[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g6[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g6[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r6[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g4[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g4[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r1[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g0[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r0[3]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r0[4]" merged with LATCH primitive "r6[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r4[4]" merged with LATCH primitive "r4[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[3]" merged with LATCH primitive "r4[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r3[4]" merged with LATCH primitive "r4[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "r5[4]" merged with LATCH primitive "r2[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g2[4]" merged with LATCH primitive "r2[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[7]" merged with LATCH primitive "g6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g7[0]" merged with LATCH primitive "g6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g6[7]" merged with LATCH primitive "g6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g1[0]" merged with LATCH primitive "g6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g1[2]" merged with LATCH primitive "g6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g1[5]" merged with LATCH primitive "g6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g1[7]" merged with LATCH primitive "g6[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g4[7]" merged with LATCH primitive "g5[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[0]" merged with LATCH primitive "g5[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g2[7]" merged with LATCH primitive "g5[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g5[7]" merged with LATCH primitive "g4[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g3[7]" merged with LATCH primitive "g4[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g2[0]" merged with LATCH primitive "g4[0]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Info (13026): Duplicate LATCH primitive "g1[4]" merged with LATCH primitive "g1[3]" File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+Warning (13012): Latch std.101_3924 has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal test[1] File: C:/intelFPGA_lite/METRO/01/01.v Line: 357
+Warning (13012): Latch std.100_3940 has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal key[6] File: C:/intelFPGA_lite/METRO/01/01.v Line: 159
+Warning (13012): Latch r5[0] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r6[0] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r7[0] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r4[0] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r5[1] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r6[1] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r4[1] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r2[1] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r5[2] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r7[2] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r2[2] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r0[2] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r5[3] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r6[3] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r4[3] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r2[3] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch r2[5] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g6[0] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.001_3956 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g5[0] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g4[0] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g5[1] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g5[2] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g2[2] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g5[3] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g1[3] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g5[4] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g5[5] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch g5[6] has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 364
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal std.101_3924 File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+Warning (13012): Latch std.001_3956 has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal key[6] File: C:/intelFPGA_lite/METRO/01/01.v Line: 159
+Warning (13012): Latch std.000_3972 has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal key[6] File: C:/intelFPGA_lite/METRO/01/01.v Line: 159
+Warning (13012): Latch std.111_3908 has unsafe behavior File: C:/intelFPGA_lite/METRO/01/01.v Line: 174
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal key[6] File: C:/intelFPGA_lite/METRO/01/01.v Line: 159
+Info (18000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/METRO/01/01.v Line: 357
+Info (21057): Implemented 1310 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21061): Implemented 1259 logic cells
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/METRO/01/output_files/01.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 188 warnings
+    Info: Peak virtual memory: 4762 megabytes
+    Info: Processing ended: Tue Jan 01 23:03:52 2019
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:00:59
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/intelFPGA_lite/METRO/01/output_files/01.map.smsg.
+
+
